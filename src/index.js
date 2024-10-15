@@ -32,7 +32,7 @@ app.post( '/users', (req, res) => {
     users.push(newUser);
 
     //response is the created user with a unique id
-    res.status(201).json(newUser);
+    res.status(200).json(newUser);
 });
 
 //curl http://localhost:3000/users/1
@@ -48,7 +48,7 @@ app.get('/users/:id', (req, res) => {
         res.status(404).json({ error: 'User not found' });
     }
     else{
-        res.status(201).json(user);
+        res.status(200).json(user);
     }
 });
 
@@ -67,7 +67,7 @@ app.put('/users/:id', (req, res) => {
     else{
         users[user]= {id: id, ...{name, email}};
 
-        res.status(201).json(users[user]);
+        res.status(200).json(users[user]);
     }
 });
 
@@ -83,7 +83,7 @@ app.delete('/users/:id', (req, res) => {
     }
     else{
         users.splice(user, 1);
-        res.status(201).send();
+        res.status(204).send();
     }
 });
 
