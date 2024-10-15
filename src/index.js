@@ -32,7 +32,7 @@ app.post( '/users', (req, res) => {
     users.push(newUser);
 
     //response is the created user with a unique id
-    res.status(200).json(newUser);
+    res.status(201).json(newUser);
 });
 
 //curl http://localhost:3000/users/1
